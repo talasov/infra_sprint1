@@ -1,4 +1,5 @@
 IP: 158.160.25.95;
-name_kittygram: полная ссылка (https:kittygram56.ddns.net) на ваш проект Kittygram;
+name_taski: https://taskitaski56.ddns.net;
+name_kittygram: https://kittygram56.ddns.net;
 login: admin;
-password: 123; 
+password: 123;
