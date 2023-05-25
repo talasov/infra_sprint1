@@ -1,0 +1,4 @@
+IP: 158.160.25.95;
+name_kittygram: полная ссылка (https:kittygram56.ddns.net) на ваш проект Kittygram;
+login: admin;
+password: 123; 
