@@ -1,5 +1,5 @@
-IP: 158.160.25.95;
-name_taski: https://taskitaski56.ddns.net;
-name_kittygram: https://kittygram56.ddns.net;
+IP: IP 51.250.99.84;
+name_taski: https://taskimyhost.ddns.net;
+name_kittygram: https://kittygrammyhost.myftp.biz;
 login: admin;
 password: 123;

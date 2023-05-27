@@ -1,18 +1,45 @@
-
 server {
-    server_name 158.160.25.95 kittygram56.ddns.net;
+
+    server_name taskimyhost.ddns.net;
 
     location /api/ {
-
-        proxy_pass http://127.0.0.1:8050;
+        proxy_pass http://127.0.0.1:8000;
     }
 
     location /admin/ {
-        proxy_pass http://127.0.0.1:8050;
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location / {
+        root   /var/www/taski;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/taskimyhost.ddns.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/taskimyhost.ddns.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+ server {
+
+    server_name kittygrammyhost.myftp.biz;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8080;
     }
 
     location /media/ {
-        alias /var/www/kittygram;
+        alias /var/www/kittygram/media/;
     }
 
     location / {
@@ -23,12 +50,67 @@ server {
 
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/kittygram56.ddns.net/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/kittygram56.ddns.net/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kittygrammyhost.myftp.biz/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kittygrammyhost.myftp.biz/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
 server {
-    if ($host = kittygram56.ddns.net) {
-        return 301 https://$host$request_uri;
+
+    server_name taskimyhost.ddns.net;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+    location / {
+        root   /var/www/taski;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/taskimyhost.ddns.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/taskimyhost.ddns.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+ server {
+
+    server_name kittygrammyhost.myftp.biz;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /media/ {
+        alias /var/www/kittygram/media/;
+    }
+
+    location / {
+        root   /var/www/kittygram/;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kittygrammyhost.myftp.biz/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kittygrammyhost.myftp.biz/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
